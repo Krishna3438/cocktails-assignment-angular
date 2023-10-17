@@ -1,0 +1,21 @@
+<div *ngIf="!getDrinks; else loadingDiv" class="align-center">
+    <mat-select [(ngModel)]="selectedOption" class="select-dropdown" (selectionChange)="onChange($event)">
+        <mat-option value="" disabled>Choose an option</mat-option>
+        <mat-option value='Alcoholic'>Alcoholic</mat-option>
+        <mat-option value='Non Alcoholic'>Non Alcoholic</mat-option>
+    </mat-select>
+    <div *ngIf="drinks && filtered_drinks.length > 0; else nothingDiv">
+        <div *ngFor="let drink of filtered_drinks" class="details-card" (click)="getIngredients(drink)">
+            <img class="img-card" [src]="drink.strDrinkThumb" />
+            <div class='cocktail-details'>{{ drink.strAlcoholic }}</div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingDiv>
+    <div class="align-loading-div">Loading...</div>
+</ng-template>
+
+<ng-template #nothingDiv>
+    <div class="align-loading-div">Sorry No drinks avaialble for selected Cocktail...</div>
+</ng-template>

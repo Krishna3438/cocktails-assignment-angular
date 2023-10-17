@@ -1,0 +1,5 @@
+<div class="cards-div">
+    <div *ngFor="let drink of drinks">
+        <div class="cocktail-card" (click) = "handleRoute(drink)">{{ drink }}</div>
+    </div>
+</div>

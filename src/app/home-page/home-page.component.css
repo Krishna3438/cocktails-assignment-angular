@@ -1,0 +1,15 @@
+.cards-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cocktail-card{
+    background-color: #FFF4BC;
+    width: 200px;
+    margin-inline: 20px;
+    cursor: pointer;
+    text-align: center;
+    padding-block: 50px;
+}
